@@ -16,4 +16,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Demo
 
-Here's a quick demo of this project : `https://yossefm.github.io/herolibrary/books`.
+Here's a quick demo of this project : https://yossefm.github.io/herolibrary/.
