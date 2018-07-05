@@ -1,0 +1,29 @@
+.navbar-brand {
+    padding: 0px;
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 15px;
+    width: auto;
+  }
+  
+  .example-8 .navbar-brand {
+    background: url(https://media.licdn.com/dms/image/C4D0BAQGS98HM51cxnw/company-logo_200_200/0?e=2159024400&v=beta&t=3dI_E4douqjc9fHy3Wue44Enwz3mERzFcYB7wXxLN8g) center / contain no-repeat;
+    width:200px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+  }  
+  @media only screen and (max-width : 768px){
+    .example-8 .navbar-brand {
+    padding: 0px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+  }
+  .example-8 .navbar-brand>img {
+    height: 100%;
+    width: auto;
+    padding: 7px 14px; 
+  }
+  }

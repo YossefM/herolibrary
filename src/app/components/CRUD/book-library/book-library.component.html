@@ -1,0 +1,30 @@
+<div>
+  <button id="addbtn" *ngIf="IsAddBooksStatus()" type="button" (click)="showBooks()">Back to the Booklist</button>
+    <button id="addbtn" type="button" *ngIf="!IsAddBooksStatus()" (click)="userClickHandler()">Add Book</button>
+    <add-book (onClickForm)="addBookHandler($event)" *ngIf="IsAddBooksStatus()"></add-book>
+  </div>      
+  <ul *ngIf="IsShowBooksStatus() || IsEditBooksStatus()" style="list-style-type: none;margin-top:30px;">
+    <div class="row">
+      <li *ngFor="let item of arrBooks" >
+      <div class="col-md-4" style="width:22%">
+          <div class="thumbnail">         
+              <img [src]="item.Image">
+    <span>Book Title : {{item.Title| capitalize:true}}</span><br>
+    <span>Book Author : {{item.Autuor| capitalize:true}}</span><br>
+    <span>Release Date : {{item.Date}}</span>
+    <br>
+    <span>
+    <remove-book role="button" (click)="deleteBook(item)" (Decision)="ConfirmDelete($event)"></remove-book>
+    <edit-book [book]="bookToEdit" (onClickEdit)="editBookHandler($event)" *ngIf="IsEditBooksStatus()" class="modal fade" id="myModalNorm"
+    tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></edit-book>
+    <span role="button" data-toggle="modal" data-target="#myModalNorm" (click)="editBook(item)" class="fa fa-edit"></span>
+    </span>
+  </div>
+  </div>
+      </li> 
+      </div>
+      <div class="alert alert-success" *ngIf="showMessage">
+          {{notification}}
+      </div>
+  </ul>
+  
